@@ -45,7 +45,7 @@ session_start();
                       </ul>
     </form>
       </nav>
-      <div id="content">
+      <div id="content2">
         <?php
 if (isset($_SESSION["confirm"])){
   echo '<p class="pub">Zamówienie zostało złożone!</p>';
@@ -104,12 +104,10 @@ else if (isset($_POST["empty"])){
   $_SESSION["count"] = 0;
   $_SESSION["arr"] = null;
   header("Refresh:0");
-
 }
         ?>
         </div>
-
-      <div class="footer">
+        <div class="footer">
       © 2019 Księgarnia Alito
     </div>
 <script>
