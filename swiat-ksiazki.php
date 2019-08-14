@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -6,6 +9,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel ="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
         <div id="header">
@@ -31,7 +35,11 @@
         </ul>
         <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                        <a class="nav-link" id ="basket" href="koszyk.php">Koszyk: 0 zł</a>
+                        <a class="nav-link" id ="basket" href="koszyk.php">Koszyk:
+                        <?php !isset($_SESSION["count"])?$count =0:$count=$_SESSION["count"];
+                        strpos($count,".") !== false? $count =$count."0":$count;
+                        echo $count;
+                        ?> zł</a>
                       </li>
                       </ul>
     </form>
@@ -81,6 +89,35 @@
       © 2019 Księgarnia Alito
     </div>
 <script>
+  document.addEventListener("DOMContentLoaded", Load);
+    function Load(){
+        var buttons = document.querySelectorAll(".cart");
+        buttons.forEach(function(val){
+            val.addEventListener("click", Add);
+        })
+    }
+    function Add(e){
+        var num = Number(e.target.parentNode.querySelector(".price").innerHTML.slice(0,-2));
+        var title = e.target.parentNode.querySelector(".title").innerHTML;
+        var author = e.target.parentNode.querySelector(".author").innerHTML;
+        author = author.replace("Autor: ","");
+        var img = e.target.parentNode.querySelector("img").getAttribute("src");
+          $.ajax({
+            method:"post",
+            url:"add.php",
+            data:{
+                price:num,
+                title:title,
+                author:author,
+                image:img
+            }
+        })
+        .done(function(val){
+            console.log(val);
+            location.reload();
+        })
+      
+    }
 </script>
 </body>
 </html>

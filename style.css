@@ -10,11 +10,11 @@
     height:92px;
     text-align:center;
     padding:20px;
-    background-color:rgb(214, 215, 231);
+    background-color:rgb(216, 221, 228);
     text-shadow: 1px 1px black;
     font-size:19px;
     letter-spacing:1px;
-    color:#112660;
+    color:#081330;
     text-shadow: -2px 0px 1px rgba(150, 150, 150, 1);
     cursor:pointer;
 
@@ -75,7 +75,7 @@ img {
 
 .cart {
     padding:5px;
-    background-color:rgb(54, 66, 90);
+    background-color:rgb(68, 104, 134);
     color:white;
     border:none;
     margin:7px 0;
@@ -101,4 +101,32 @@ img {
 
 #content {
     height:1350px;
+}
+
+table {
+    margin:50px auto;
+}
+
+.dark {
+    background-color:rgb(21, 21, 85);
+    color:white;
+}
+
+td {
+    padding:15px;
+    border:1px solid black;
+    text-align:center;
+}
+
+.sm {
+    height:110px;
+    padding:5px;
+}
+
+.justify {
+    text-align:center;
+}
+
+.infbask {
+margin-right:6px;
 }
