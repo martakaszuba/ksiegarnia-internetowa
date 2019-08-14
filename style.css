@@ -1,0 +1,104 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    box-sizing:border-box;
+}
+
+#header {
+    height:92px;
+    text-align:center;
+    padding:20px;
+    background-color:rgb(214, 215, 231);
+    text-shadow: 1px 1px black;
+    font-size:19px;
+    letter-spacing:1px;
+    color:#112660;
+    text-shadow: -2px 0px 1px rgba(150, 150, 150, 1);
+    cursor:pointer;
+
+}
+
+#basket {
+    color:rgb(71, 78, 136);
+    font-size:19px;
+}
+
+#basket:hover {
+    opacity:0.7;
+}
+
+ul {
+    font-size:18px;
+}
+
+li {
+    padding:0 6px;
+}
+
+.product {
+width:23%;
+margin:15px 1%;
+height:400px;
+border-left:1px solid rgb(172, 173, 182);
+float:left;
+text-align:center;
+}
+
+.pub {
+  text-align:center;
+  margin:30px;
+  font-size:19.5px;
+  color:#112660;
+}
+
+img {
+    height:150px;
+    padding:10px;
+}
+
+.title {
+    color:rgb(55, 55, 105);
+    font-size:18.5px;
+    padding:7px 4px;
+}
+
+.author {
+    margin:5px 0;
+    font-family:Arial;
+}
+
+.year {
+    font-family:Arial;  
+}
+
+.cart {
+    padding:5px;
+    background-color:rgb(54, 66, 90);
+    color:white;
+    border:none;
+    margin:7px 0;
+    width:110px;
+    font-size:15px;
+    cursor:pointer;
+    font-family:Arial;
+}
+
+.cart:hover {
+    opacity:0.7;
+}
+
+.footer {
+    height:59px;
+    padding:20px;
+    margin-top:20px;
+    background-color:#112660;
+    clear:both;
+    color:white;
+    text-align:center;
+}
+
+#content {
+    height:1350px;
+}
