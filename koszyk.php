@@ -110,7 +110,5 @@ else if (isset($_POST["empty"])){
         <div class="footer">
       © 2019 Księgarnia Alito
     </div>
-<script>
-</script>
 </body>
 </html>

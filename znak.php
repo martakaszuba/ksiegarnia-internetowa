@@ -47,7 +47,7 @@ session_start();
       <div id="content">
         <p class="pub">Wydawnictwo &nbsp;Znak</p>
 <?php
-        $conn = new mysqli("localhost", "root", "", "ksiazki");
+    $conn = new mysqli("localhost", "root", "", "ksiazki");
 		$conn->set_charset("utf8");
 		if ($conn->connect_error) {
 			die ("Connection failed: " . $conn->connect_error);

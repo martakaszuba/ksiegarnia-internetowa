@@ -47,7 +47,8 @@ session_start();
       <div id="content">
         <p class="pub">Wydawnictwo &nbsp;Rebis</p>
 <?php
-        $conn = new mysqli("localhost", "root", "", "ksiazki");
+
+    $conn = new mysqli("localhost", "root", "", "ksiazki");
 		$conn->set_charset("utf8");
 		if ($conn->connect_error) {
 			die ("Connection failed: " . $conn->connect_error);
@@ -88,36 +89,6 @@ session_start();
       <div class="footer">
       © 2019 Księgarnia Alito
     </div>
-<script>
-  document.addEventListener("DOMContentLoaded", Load);
-    function Load(){
-        var buttons = document.querySelectorAll(".cart");
-        buttons.forEach(function(val){
-            val.addEventListener("click", Add);
-        })
-    }
-    function Add(e){
-        var num = Number(e.target.parentNode.querySelector(".price").innerHTML.slice(0,-2));
-        var title = e.target.parentNode.querySelector(".title").innerHTML;
-        var author = e.target.parentNode.querySelector(".author").innerHTML;
-        author = author.replace("Autor: ","");
-        var img = e.target.parentNode.querySelector("img").getAttribute("src");
-          $.ajax({
-            method:"post",
-            url:"add.php",
-            data:{
-                price:num,
-                title:title,
-                author:author,
-                image:img
-            }
-        })
-        .done(function(val){
-            console.log(val);
-            location.reload();
-        })
-      
-    }
-</script>
+<script src="script.js"></script>
 </body>
 </html>
